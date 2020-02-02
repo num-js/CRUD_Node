@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
+  <title>Node JS</title>
+</head>
+<body>
+  <br>
+  <div class="container">
+    <div class="jumbotron" style="padding: 10px; padding-top: 30px;">
+      <h3 class="text-center">CRUD - NodeJS</h3>
+            <!-- Model Start-->
+      <div>
+        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#addUserModal">Add</button>
+        <div class="modal" id="addUserModal">
+          <br>
+          <center>
+            <div class="jumbotron col-lg-4 col-md-6"  style="padding: 15px;">
+              <h3 class="text-center"><u>Add User</u></h3>
+                  <!-- Form -->
+              <form class="form" action="/" method="POST">
+                <input class="form-control" type="text" name="name" placeholder="Enter Name"> <br>
+                <input class="form-control" type="email" name="email" placeholder="Enter Email"> <br>
+                <input class="form-control" type="number" name="mobileno" placeholder="Enter Mobile No"> <br>
+                <input class="form-control" type="text" name="city" placeholder="Enter City"> <br>
+                <input class="btn btn-success" type="submit" value="Save" name="save"> <br>
+              </form>
+            </div>
+          </center> 
+        </div>
+      </div>
+      <hr>
+      <table class="table table-hover text-center table-responsive">
+        <tr class="bg-dark text-white">
+          <th>Name</th>
+          <th>Email</th>
+          <th>Mobile No</th>
+          <th>City</th>
+          <th colspan="2">Action</th>
+        </tr>
+       <% records.forEach(function(row){ %>
+        <tr>
+          <td><%= row.name %></td>
+          <td><%= row.email %></td>
+          <td><%= row.mobileno %></td>
+          <td><%= row.city %></td>
+          <td><i class="btn btn-warning">E</i></td>
+          <td><i class="btn btn-danger">D</i></td>
+        </tr>
+       <% }) %>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
